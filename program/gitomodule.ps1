@@ -3,6 +3,8 @@ param (
 )
 
 function gito ($paramether) {
+    Write-Host $paramether
+    
     try {        
         git add *
         
