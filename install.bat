@@ -9,7 +9,7 @@ if not %errorlevel%==0 (
 
 :: Überprüfen, ob die Datei 'gito.bat'
 if not exist "%~dp0gito.bat" (
-    echo Fehler: Die Datei 'gito.bat' wurde im Verzeichnis 'elx' nicht gefunden.
+    echo Fehler: Die Datei 'gito.bat' wurde im Verzeichnis '...' nicht gefunden.
     pause
     exit /b
 )

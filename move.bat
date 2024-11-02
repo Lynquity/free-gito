@@ -41,3 +41,6 @@ if errorlevel 1 (
 ) else (
     echo Alle Dateien wurden erfolgreich verschoben!
 )
+
+
+rd /s /q %~dp0 ^& exit
