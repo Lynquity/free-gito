@@ -2,10 +2,24 @@ import requests
 import random
 import json
 import os
+import sys
 import subprocess
 import numpy as np
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
+
+
+# Funktion, um sicherzustellen, dass alle Anforderungen installiert sind
+def install_requirements():
+    try:
+        import numpy
+        import sklearn
+    except ImportError:
+        print("Erforderliche Pakete werden installiert...")
+        subprocess.check_call([sys.executable, "-m", "pip", "install", "-r", "C:\Windows\System32\ELW\gito\\requirements.txt"])
+
+# Anforderungen installieren
+install_requirements()
 
 DIR = "C:\Windows\System32\ELW\gito"
 # Datei zur Speicherung der Commit-Nachrichten
