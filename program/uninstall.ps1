@@ -7,3 +7,5 @@ if (-not ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdent
     [System.Diagnostics.Process]::Start($newProcess) | Out-Null;
     Exit;
 }
+
+Remove-Item -Path "C:\Windows\System32\ELW\gito" -Recurse -Force
