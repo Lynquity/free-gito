@@ -9,3 +9,5 @@ if (-not ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdent
 }
 
 Remove-Item -Path "C:\Windows\System32\ELW\gito" -Recurse -Force
+
+Remove-Item -Path "C:\Windows\System32\gito.bat" -Force
