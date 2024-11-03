@@ -8,7 +8,10 @@ if (-not ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdent
     Exit;
 }
 
-Remove-Item -Path "C:\Windows\System32\ELW\gito" -Recurse -Force
+$path1 = "C:\Windows\System32\ELW\gito"
+
+if (Test-Path -Path $path1)
+Remove-Item -Path $path1 -Recurse -Force
 
 Write-Output "Remove"
 
