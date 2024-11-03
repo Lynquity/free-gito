@@ -10,11 +10,11 @@ if (-not ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdent
 
 $path1 = "C:\Windows\System32\ELW\gito"
 
-if (Test-Path -Path $path1)
-Remove-Item -Path $path1 -Recurse -Force
-
-Write-Output "Remove"
-
+if (Test-Path -Path $path1) 
+{
+    Remove-Item -Path $path1 -Recurse -Force
+    Write-Output "Remove"
+}
 Remove-Item -Path "C:\Windows\System32\gito.bat" -Force
 
 Write-Output "Remove"
