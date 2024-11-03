@@ -15,6 +15,9 @@ if (Test-Path -Path $path1)
     Remove-Item -Path $path1 -Recurse -Force
     Write-Output "Remove"
 }
-Remove-Item -Path "C:\Windows\System32\gito.bat" -Force
 
-Write-Output "Remove"
+if (Test-Path -Path $path2)
+{
+    Remove-Item -Path "C:\Windows\System32\gito.bat" -Force
+    Write-Output "Remove"
+}
