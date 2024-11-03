@@ -9,6 +9,7 @@ if (-not ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdent
 }
 
 $path1 = "C:\Windows\System32\ELW\gito"
+$path2 = "C:\Windows\System32\gito.bat"
 
 if (Test-Path -Path $path1) 
 {
@@ -18,6 +19,6 @@ if (Test-Path -Path $path1)
 
 if (Test-Path -Path $path2)
 {
-    Remove-Item -Path "C:\Windows\System32\gito.bat" -Force
+    Remove-Item -Path $path2  -Force
     Write-Output "Remove"
 }
