@@ -21,12 +21,8 @@ def install_requirements():
 # Anforderungen installieren
 install_requirements()
 
-DIR = "C:\Windows\System32\ELW\gito"
 # Datei zur Speicherung der Commit-Nachrichten
 COMMIT_FILE = "C:\Windows\System32\ELW\gito\commit_messages.json"
-
-if not os.path.exists(DIR):
-    os.makedirs(DIR)
 
 
 # Funktion zum Abrufen der letzten 40 Commits aus einem Standard-Repository
