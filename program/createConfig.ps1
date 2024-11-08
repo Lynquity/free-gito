@@ -7,18 +7,21 @@ if (-not ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdent
     [System.Diagnostics.Process]::Start($newProcess) | Out-Null;
     Exit;
 }
+$reponame = 
+$branch = 
+$url = 
+$file_path =
 
-$path1 = "C:\Windows\System32\ELW\gito"
-$path2 = "C:\Windows\System32\gito.bat"
-
-if (Test-Path -Path $path1) 
-{
-    Remove-Item -Path $path1 -Recurse -Force
-    Write-Output "Remove"
+$config_value = @{
+    Version = "0.0.1"
+    repo_name = $reponame
+    branch = $branch
+    clone_url = $url
+    file_path = $file_path
 }
 
-if (Test-Path -Path $path2)
-{
-    Remove-Item -Path $path2  -Force
-    Write-Output "Remove"
-}
+$json = $config_value | ConvertTo-Json -Depth 3
+
+$json |  Out-File -FilePath "./config.json" -Encoding utf8
+
+Write-Host "config.json wurde erstellt"
