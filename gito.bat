@@ -3,5 +3,5 @@
 if "%1"=="--delete" (
     powershell -ExecutionPolicy Bypass -File "C:\Windows\System32\ELW\gito\uninstall.ps1"
 ) else (
-    python C:\Windows\System32\ELW\gito\main.py
+    C:\Windows\System32\ELW\gito\main.exe
 )
