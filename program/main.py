@@ -11,7 +11,7 @@ def get_staged_files():
     for line in lines:
         if line:
             status = line[:2].strip()
-            rest = line[3:].strip()  # Rest der Zeile nach dem Statuscode
+            rest = line[3:].strip()
             files.append((status, rest))
     return files
 
@@ -32,7 +32,7 @@ def generate_commit_message(files):
                 messages.append(f"Verschoben/Umbenannt --> {path}")
         else:
             messages.append(f"{status} --> {path}")
-    return '\n'.join(messages)
+    return ' '.join(messages)
 
 def main():
     files = get_staged_files()
@@ -45,15 +45,22 @@ def main():
 
     user = input('Drücken Sie "c", um zu committen: ')
     if user.lower() == 'c':
-        result = subprocess.run(
-            ['git', 'commit', '-m', commit_message],
-            check=True,
-            capture_output=True,
-            text=True
-        )
-        print('Commit abgeschlossen')
+        print("Führe Git Commit aus...")
+        try:
+            # Commit-Befehl ausführen
+            result = subprocess.run(
+                ['git', 'commit', '-m', commit_message],
+                check=True,
+                capture_output=True,
+                text=True
+            )
+            print("Commit erfolgreich!")
+            print(result.stdout)
+        except subprocess.CalledProcessError as e:
+            print(f"Fehler beim Commit: {e}")
+            print("Fehlermeldung:", e.stderr)
     else:
-        print('Commit abgebrochen')
+        print("Commit abgebrochen.")
 
 if __name__ == "__main__":
     main()
