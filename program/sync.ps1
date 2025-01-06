@@ -1,5 +1,5 @@
 # PowerShell Git Sync Script mit automatischer Branch-Auswahl
-$repoPath = "C:\Path\To\Your\Repo"  # Ändere das zu deinem Repo-Pfad
+$repoPath = ".\"  # Ändere das zu deinem Repo-Pfad
 
 # Wechsle in das Repository-Verzeichnis
 Set-Location $repoPath
