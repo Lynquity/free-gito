@@ -29,10 +29,10 @@ else {
     $selection = Read-Host "nBitte wähle eine Branch-Nummer"
     if ($selection -match '^\d+$' -and [int]$selection -le $branches.Count -and [int]$selection -gt 0) {
         $branch = $branches[$selection - 1]
-        Write-Host "n✅ Gewählter Branch: $branchn"
+        Write-Host "`n Gewählter Branch: $branch"
     }
     else {
-        Write-Host "nUngültige Auswahl, Skript wird beendet."
+        Write-Host "`nUngültige Auswahl, Skript wird beendet."
         exit
     }
 }
