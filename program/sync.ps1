@@ -1,5 +1,5 @@
 $repoPath = "."
-Write-Host "n Starte Git-Sync für $repoPath"
+Write-Host "`n Starte Git-Sync für $repoPath"
 
 # Wechsle in das Repository-Verzeichnis
 Set-Location $repoPath
@@ -26,7 +26,7 @@ else {
     }
 
     # Auswahl treffen
-    $selection = Read-Host "nBitte wähle eine Branch-Nummer"
+    $selection = Read-Host "`nBitte wähle eine Branch-Nummer"
     if ($selection -match '^\d+$' -and [int]$selection -le $branches.Count -and [int]$selection -gt 0) {
         $branch = $branches[$selection - 1]
         Write-Host "`n Gewählter Branch: $branch"
@@ -50,7 +50,7 @@ $pullOutput = git pull origin $branch 2>&1
 
 # Prüfe auf Merge-Konflikte
 if ($pullOutput -match "CONFLICT") {
-    Write-Host "nMerge-Konflikt erkannt! Öffne VS Code..." 
+    Write-Host "`nMerge-Konflikt erkannt! Öffne VS Code..." 
     code .  # VS Code öffnen
     git status
     exit
@@ -72,4 +72,4 @@ else {
     Write-Host "Keine neuen Änderungen, Repository ist aktuell!"
 }
 
-Write-Host "nGit-Sync abgeschlossen!" 
+Write-Host "`nGit-Sync abgeschlossen!" 
