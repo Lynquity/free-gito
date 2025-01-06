@@ -1,3 +1,4 @@
+$repoPath = "."
 Write-Host "n Starte Git-Sync für $repoPath"
 
 # Wechsle in das Repository-Verzeichnis
