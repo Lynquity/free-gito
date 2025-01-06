@@ -2,7 +2,7 @@
 $repoPath = ".\"  # Ändere das zu deinem Repo-Pfad
 
 
-Write-Host "🔄 Starte Git-Sync für $repoPath"
+Write-Host "🔄 Starte Git-Sync für $repoPath" -ForegroundColor Green
 
 # Fetch die neuesten Änderungen
 git fetch origin
@@ -17,7 +17,8 @@ $branches = $branches | Sort-Object -Unique
 if ($branches.Count -eq 1) {
     $branch = $branches[0]
     Write-Host "✅ Einziger Branch gefunden: $branch"
-} else {
+}
+else {
     # Benutzer auswählen lassen
     Write-Host "📌 Verfügbare Branches:"
     for ($i = 0; $i -lt $branches.Count; $i++) {
@@ -41,7 +42,7 @@ $pullOutput = git pull origin $branch 2>&1
 
 # Prüfe auf Merge-Konflikte
 if ($pullOutput -match "CONFLICT") {
-    Write-Host "⚠ Merge-Konflikt erkannt! Öffne VS Code..." 
+    Write-Host "⚠ Merge-Konflikt erkannt! Öffne VS Code..." -ForegroundColor Yellow
     code .  # VS Code öffnen
     git status
     exit
@@ -57,8 +58,9 @@ if ($status) {
     git add .
     git commit -m "Auto-Sync Update"
     git push origin $branch
-} else {
+}
+else {
     Write-Host "✅ Keine neuen Änderungen, Repository ist aktuell!"
 }
 
-Write-Host "🚀 Git-Sync abgeschlossen!"
+Write-Host "🚀 Git-Sync abgeschlossen!" -ForegroundColor Green
