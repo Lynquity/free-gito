@@ -1,10 +1,8 @@
 # PowerShell Git Sync Script mit automatischer Branch-Auswahl
 $repoPath = ".\"  # Ändere das zu deinem Repo-Pfad
 
-# Wechsle in das Repository-Verzeichnis
-Set-Location $repoPath
 
-Write-Host "🔄 Starte Git-Sync für $repoPath" -ForegroundColor Green
+Write-Host "🔄 Starte Git-Sync für $repoPath"
 
 # Fetch die neuesten Änderungen
 git fetch origin
