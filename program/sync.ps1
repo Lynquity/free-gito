@@ -41,7 +41,7 @@ $pullOutput = git pull origin $branch 2>&1
 
 # Prüfe auf Merge-Konflikte
 if ($pullOutput -match "CONFLICT") {
-    Write-Host "⚠ Merge-Konflikt erkannt! Öffne VS Code..." -ForegroundColor Yellow
+    Write-Host "⚠ Merge-Konflikt erkannt! Öffne VS Code..." 
     code .  # VS Code öffnen
     git status
     exit
@@ -61,4 +61,4 @@ if ($status) {
     Write-Host "✅ Keine neuen Änderungen, Repository ist aktuell!"
 }
 
-Write-Host "🚀 Git-Sync abgeschlossen!" -ForegroundColor Green
+Write-Host "🚀 Git-Sync abgeschlossen!"
