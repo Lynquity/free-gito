@@ -20,7 +20,7 @@ if ($branches.Count -eq 1) {
 }
 else {
     # Benutzer auswählen lassen
-    Write-Host "Verfügbare Branches:n"
+    Write-Host "Verfügbare Branches: $branches.Count"
     for ($i = 0; $i -lt $branches.Count; $i++) {
         Write-Host "$($i+1): $($branches[$i])"
     }
