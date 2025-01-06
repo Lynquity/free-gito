@@ -13,6 +13,8 @@ $branches = git branch -r | ForEach-Object { $_ -replace 'origin/', '' } | Where
 # Entferne doppelte oder lokale Branches
 $branches = $branches | Sort-Object -Unique
 
+$branches = $branches | Where-Object { $_ -notmatch '\s' }
+
 # Prüfe, wie viele Branches vorhanden sind
 if ($branches.Count -eq 1) {
     $branch = $branches
