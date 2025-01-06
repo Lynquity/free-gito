@@ -15,7 +15,7 @@ $branches = $branches | Sort-Object -Unique
 
 # Prüfe, wie viele Branches vorhanden sind
 if ($branches.Count -eq 1) {
-    $branch = $branches[0]
+    $branch = $branches
     Write-Host "Einziger Branch gefunden: $branch"
 }
 else {
