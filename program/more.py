@@ -16,7 +16,7 @@ import sys
 import os
 import json
 
-CONFIG_FILE = "./ELW/gito/config.json"
+CONFIG_FILE = "C:/Windows/System32/ELW/gito/config.json"
 
 def load_commit_config(config_file):
     """Lädt die Commit-Konfiguration aus einer JSON-Datei."""
