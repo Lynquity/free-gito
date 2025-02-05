@@ -8,12 +8,12 @@ if not %errorlevel%==0 (
 )
 
 REM Prüft, ob %1 leer ist
-if "%1"=="" (
+if "%~1"=="" (
     REM Kein Parameter angegeben – fragt den Benutzer ab
     set /p parameter="Bitte Parameter eingeben: "
 ) else (
     REM Andernfalls wird der übergebene Parameter verwendet
-    set parameter=%1
+    set parameter=%~1
 )
 :: Überprüfen, ob die Datei 'gito.bat'
 if not exist "%~dp0gito.bat" (
