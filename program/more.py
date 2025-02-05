@@ -31,6 +31,21 @@ def load_commit_config(config_file):
         sys.exit(1)
     return config
 
+def get__files():
+    result = subprocess.run(
+        ['git', 'status', '--porcelain'],
+        capture_output=True,
+        text=True
+    )
+    lines = result.stdout.strip().split('\n')
+    files = []
+    for line in lines:
+        if line:
+            status = line[:2].strip()
+            rest = line[3:].strip()
+            files.append((status, rest))
+    return files
+
 def get_staged_files():
     """Returns a list of files that are staged for commit."""
     try:
@@ -76,9 +91,15 @@ def get_multiline_input(prompt="Enter commit description (finish with a single '
 
 def main():
     
+    
     config = load_commit_config(CONFIG_FILE)
 
     execute_git_add_command(config)
+
+    files = get__files()
+    if not files:
+        print("Keine gestagten Änderungen gefunden.")
+        return
 
     try:
         commit_type = input("Commit type (e.g., fix, feature, docs, refactor): ").strip()
