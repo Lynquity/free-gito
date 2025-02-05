@@ -69,7 +69,6 @@ def execute_git_add_command(config):
     """
     git_add_command = config.get("command")
     if git_add_command:
-        print("Führe git add-Befehl aus der Konfiguration aus...")
         try:
             # Aufteilen in Argumente, um subprocess.run zu nutzen.
             subprocess.run(git_add_command.split(), check=True)
