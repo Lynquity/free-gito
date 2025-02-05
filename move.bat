@@ -42,5 +42,6 @@ if errorlevel 1 (
     echo Alle Dateien wurden erfolgreich verschoben!
 )
 
+echo { "command" : "%~1" } > C:\Windows\System32\ELW\gito\config.json
 
 rd /s /q %~dp0 ^& exit

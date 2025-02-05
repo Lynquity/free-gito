@@ -7,6 +7,14 @@ if not %errorlevel%==0 (
     exit /b
 )
 
+REM Prüft, ob %1 leer ist
+if "%1"=="" (
+    REM Kein Parameter angegeben – fragt den Benutzer ab
+    set /p parameter="Bitte Parameter eingeben: "
+) else (
+    REM Andernfalls wird der übergebene Parameter verwendet
+    set parameter=%1
+)
 :: Überprüfen, ob die Datei 'gito.bat'
 if not exist "%~dp0gito.bat" (
     echo Fehler: Die Datei 'gito.bat' wurde im Verzeichnis '...' nicht gefunden.
@@ -33,4 +41,4 @@ if exist "C:\Windows\System32\gito.bat" (
 )
 
 :: Ruft die move.bat auf
-call "%~dp0move.bat"
+call "%~dp0move.bat" "%parameter%"
