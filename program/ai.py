@@ -24,10 +24,14 @@ payload = json.dumps({
 headers = {
   'Content-Type': 'application/json',
 <<<<<<< HEAD
+<<<<<<< HEAD
   'Authorization': 'Bearer <token>'
 =======
   'Authorization': 'Bearer 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'
 >>>>>>> 9dbc385 (add program for commit message generator)
+=======
+  'Authorization': 'Bearer <token>'
+>>>>>>> d3edffd1895218f9a77113767837680e49d87df2
 }
 conn.request("POST", "/run/predict", payload, headers)
 res = conn.getresponse()
@@ -44,4 +48,8 @@ if confirmation == 'c':
     subprocess.run(["git", "commit", "-m", commit_message])
     print("Commit created!")
 else:
+<<<<<<< HEAD
     print("Commit aborted.")
+=======
+    print("Commit aborted.")
+>>>>>>> d3edffd1895218f9a77113767837680e49d87df2
