@@ -2,8 +2,6 @@
 
 if "%1"=="--delete" (
     powershell -ExecutionPolicy Bypass -File "C:\Windows\System32\ELW\gito\uninstall.ps1"
-) else if "%1"=="sync" (
-    powershell -ExecutionPolicy Bypass -File "C:\Windows\System32\ELW\gito\sync.ps1"
 ) else if "%1"=="-v" (
     powershell -ExecutionPolicy Bypass -File "C:\Windows\System32\ELW\gito\version.ps1"
 ) else if "%1"=="--version" (
