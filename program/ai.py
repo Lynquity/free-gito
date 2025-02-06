@@ -23,7 +23,11 @@ payload = json.dumps({
 })
 headers = {
   'Content-Type': 'application/json',
+<<<<<<< HEAD
   'Authorization': 'Bearer <token>'
+=======
+  'Authorization': 'Bearer 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'
+>>>>>>> 9dbc385 (add program for commit message generator)
 }
 conn.request("POST", "/run/predict", payload, headers)
 res = conn.getresponse()
