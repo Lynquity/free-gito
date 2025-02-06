@@ -5,7 +5,7 @@ $version_file = "C:\Windows\System32\ELW\gito\version.json"
 $version = Get-Content -Path $version_file -Raw | ConvertFrom-Json
 
 # Define the URL of the online JSON file
-$jsonUrl = 'https://github.com/Lynquity/free-gito/blob/main/program/version.json'
+$jsonUrl = 'https://raw.githubusercontent.com/Lynquity/free-gito/main/program/version.json'
 
 # Fetch online version JSON data
 $vers = $version.version.Trim()  # Trim any spaces
