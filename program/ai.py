@@ -23,7 +23,7 @@ payload = json.dumps({
 })
 headers = {
   'Content-Type': 'application/json',
-  'Authorization': 'Bearer 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'
+  'Authorization': 'Bearer <token>'
 }
 conn.request("POST", "/run/predict", payload, headers)
 res = conn.getresponse()
