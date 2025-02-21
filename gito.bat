@@ -6,13 +6,13 @@ if "%1"=="--delete" (
     powershell -ExecutionPolicy Bypass -File "C:\Windows\System32\ELW\gito\version.ps1"
 ) else if "%1"=="--version" (
     powershell -ExecutionPolicy Bypass -File "C:\Windows\System32\ELW\gito\version.ps1"
-) else if "%1"=="m" (
+) else if "%1"=="f" (
     powershell -ExecutionPolicy Bypass -File "C:\Windows\System32\ELW\gito\checkversion.ps1"
-    C:\Windows\System32\ELW\gito\more.exe
+    C:\Windows\System32\ELW\gito\main.exe
 ) else if "%1"=="a" (
     powershell -ExecutionPolicy Bypass -File "C:\Windows\System32\ELW\gito\checkversion.ps1"
     C:\Windows\System32\ELW\gito\ai.exe
 ) else (
     powershell -ExecutionPolicy Bypass -File "C:\Windows\System32\ELW\gito\checkversion.ps1"
-    C:\Windows\System32\ELW\gito\main.exe
+    C:\Windows\System32\ELW\gito\more.exe
 )
